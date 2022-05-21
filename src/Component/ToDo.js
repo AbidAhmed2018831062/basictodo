@@ -6,6 +6,7 @@ function ToDo({todo})
 {
 const {title,id,desc}=todo;
 const {removeToDo}=useContext(delToDo);
+//console.log(useContext(delToDo));
 //console.log(title+id+desc);
 return(
     <section className={styles.sect} key={id}>

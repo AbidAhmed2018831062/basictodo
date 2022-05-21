@@ -20,10 +20,11 @@ const removeToDo=(id)=>{
 }
 return(
     <div>
+        <h1>ToDo App</h1>
 
            <NewToDo addToDo={addToDo}/>
       <hr></hr>
-      <delToDo.Provider value={removeToDo}>
+      <delToDo.Provider value={{removeToDo}}>
         <ShowToDo todos={todos}/>
         </delToDo.Provider>
     </div>

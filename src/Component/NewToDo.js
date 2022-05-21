@@ -16,6 +16,12 @@ const reducer=(state,action)=>{
             desc:action.desc,
             id:Math.round(Math.random()*10000000+50)
         }
+        case 'delete':
+            return{
+                title:'',
+                desc:'',
+               
+            } 
     
         default:
            return state;
@@ -37,6 +43,11 @@ function NewToDo({addToDo})
         dispatch({type:'add',desc:value,title:toDo.title,id});
        }
    }
+   const sendToDo=()=>{
+       const toD=toDo;
+       dispatch({type:'delete'});
+       addToDo(toD);
+   }
 return(
     <div className={styles.styleText}>
         <div className={styles.sty}>
@@ -47,7 +58,7 @@ return(
         <label htmlFor="desc">Description: </label>
         <textarea name="desc" type="text" value={toDo.desc} onChange={toDoHandler}></textarea>
         </div>
-        <button type="submit" onClick={()=> addToDo(toDo)}>Submit</button>
+        <button type="submit" onClick={sendToDo}>Submit</button>
     </div>
 )
 }
